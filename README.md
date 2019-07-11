@@ -15,10 +15,51 @@ wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]],
     Momentum[k, D] + Momentum[p1, D] + Momentum[p2, D]]] Pair[
    LorentzIndex[mu, D], Momentum[k, D]] Pair[LorentzIndex[nu, D], 
    Momentum[k, D]]  
-worng2 = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & // 
+worng = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & // 
    PaVeReduce // ChangeDimension[#, D] &
    
    ```
+   
+   ```
+   $LimitTo4 = False;
+wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
+   PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
+   PropagatorDenominator[
+    Momentum[k, D] + Momentum[p1, D] + Momentum[p2, D]]] Pair[
+   LorentzIndex[mu, D], Momentum[k, D]] Pair[LorentzIndex[nu, D], 
+   Momentum[k, D]]
+worng = wt // TID[#, k] & // ToPaVe[#, k] & // PaVeReduce // 
+  ChangeDimension[#, D] &
+ 
+   ```
+   
+   ```
+   $LimitTo4 = True;
+wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
+   PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
+   PropagatorDenominator[
+    Momentum[k, D] + Momentum[p1, D] + Momentum[p2, D]]] Pair[
+   LorentzIndex[mu, D], Momentum[k, D]] Pair[LorentzIndex[nu, D], 
+   Momentum[k, D]]
+right = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & // 
+   PaVeReduce // ChangeDimension[#, D] &
+   ```
+   
+   ```
+   $LimitTo4 = True;
+wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
+   PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
+   PropagatorDenominator[
+    Momentum[k, D] + Momentum[p1, D] + Momentum[p2, D]]] Pair[
+   LorentzIndex[mu, D], Momentum[k, D]] Pair[LorentzIndex[nu, D], 
+   Momentum[k, D]]
+
+wrong = wt // TID[#, k] & // ToPaVe[#, k] & // PaVeReduce // 
+   ChangeDimension[#, D] &;
+wrong = wrong /. D -> 4 // ChangeDimension[#, D] &
+   ```
+   
+   
 
 *  <summary>we expect to get the answers </summary> 
 
