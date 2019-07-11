@@ -7,6 +7,9 @@
 *  <summary>Did you try to reinstall FeynCalc (stable version) using the automatic installer to make sure that you have the latest bugfixes?</summary>    
   ```Yes```
   *  <summary>oneloop calculation "k" is loop monentum, and we set all mass to zero, that means p1.p1=0, p2.p2=0  p1.p2=p1p2  </summary>    
+  
+ *  <summary> 1. $LimitTo4=False (default) , use Oneloop with oneloopsimplify --> wrong </summary> 
+ 
 ```
 FCClearScalarProducts[];
 ScalarProduct[p1, p1] = 0;
@@ -23,7 +26,8 @@ worng = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & //
    PaVeReduce // ChangeDimension[#, D] &
    
    ```
-   
+  *  <summary> 2. $LimitTo4=False (default) , use TID  --> wrong </summary> 
+
    ```
 FCClearScalarProducts[];
 ScalarProduct[p1, p1] = 0;
@@ -40,7 +44,8 @@ worng = wt // TID[#, k] & // ToPaVe[#, k] & // PaVeReduce //
   ChangeDimension[#, D] &
  
    ```
-   
+  *  <summary>3. $LimitTo4=True,use Oneloop with oneloopsimplify --> right  </summary> 
+ 
    ```
 FCClearScalarProducts[];
 ScalarProduct[p1, p1] = 0;
@@ -56,7 +61,7 @@ wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]],
 right = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & // 
    PaVeReduce // ChangeDimension[#, D] &
    ```
-   
+ *  <summary> 4. $LimitTo4=True, use TID  --> wrong </summary> 
    ```
 FCClearScalarProducts[];
 ScalarProduct[p1, p1] = 0;
