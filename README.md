@@ -82,7 +82,7 @@ wrong = wrong /. D -> 4 // ChangeDimension[#, D] &
    
    
 
-*  <summary>we expect to get the third answers ($LimitTo4=True,use Oneloop with oneloopsimplify) </summary> 
+*  <summary>we expect to get the third answers ($LimitTo4=True,use Oneloop with oneloopsimplify) , there should be a term which is not contain B0/C0.</summary> 
 ```
 (I \[Pi]^2 Subscript[B, 0](2 p1p2,0,0) (p1p2 g^(munu)-2 p2^mu p1^nu-2 p1^mu p2^nu+3 p1^mu p1^nu-p2^mu p2^nu))/(4 p1p2)+I \[Pi]^2 p1^mu p1^nu Subscript[C, 0](0,0,2 p1p2,0,0,0)+(I \[Pi]^2 (p1p2 g^(munu)-p2^mu p1^nu-p1^mu p2^nu))/(4 p1p2)
 ```
