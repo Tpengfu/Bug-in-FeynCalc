@@ -83,7 +83,9 @@ wrong = wrong /. D -> 4 // ChangeDimension[#, D] &
    
 
 *  <summary>we expect to get the answers </summary> 
-
+```
+(I \[Pi]^2 Subscript[B, 0](2 p1p2,0,0) (p1p2 g^(munu)-2 p2^mu p1^nu-2 p1^mu p2^nu+3 p1^mu p1^nu-p2^mu p2^nu))/(4 p1p2)+I \[Pi]^2 p1^mu p1^nu Subscript[C, 0](0,0,2 p1p2,0,0,0)+(I \[Pi]^2 (p1p2 g^(munu)-p2^mu p1^nu-p1^mu p2^nu))/(4 p1p2)
+```
 
 When I use TID to do HiggstoGluonGluon oneloop calculation, the result was wrong, and it was same with the calculation that I used Oneloop with oneloopsimplify which was not reconmmand by developer.    
   
