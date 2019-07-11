@@ -1,1 +1,3 @@
 # Bug-in-FeynCalc
+When I use TID to do HiggstoGluonGluon oneloop calculation, the result was wrong, and it was same with the calculation that I used Oneloop with oneloopsimplify which was not reconmmand by developer.
+Then I set $LimitTo4=True, the result of OneLoop with OneLoopSimplify was True(agree with my derivation) and the result of TID was still wrong.
