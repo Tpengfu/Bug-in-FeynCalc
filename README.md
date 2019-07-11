@@ -7,7 +7,8 @@
 *  <summary>Did you try to reinstall FeynCalc (stable version) using the automatic installer to make sure that you have the latest bugfixes?</summary>    
   ```Yes```
   *  <summary>oneloop calculation "k" is loop monentum, and we set all mass to zero, that means p1.p1=0, p2.p2=0  p1.p2=p1p2  </summary>    
-```$LimitTo4 = False;  
+```
+$LimitTo4 = False;  
 wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
    PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
    PropagatorDenominator[
