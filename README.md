@@ -12,7 +12,7 @@ in which "k" is loop monentum, and we set all mass to zero, that means p1.p1=0, 
 ## four differnt ways
 
 1. $LimitTo4=False (default) , use Oneloop with oneloopsimplify 
-2. $LimitTo4=False (default) , use TID
+2. $LimitTo4=False (default) , use TID  
 **3. $LimitTo4=True,             use Oneloop with oneloopsimplify**
 4. $LimitTo4=True,             use TID
 
