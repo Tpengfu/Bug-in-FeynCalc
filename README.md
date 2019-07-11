@@ -8,6 +8,10 @@
   ```Yes```
   *  <summary>oneloop calculation "k" is loop monentum, and we set all mass to zero, that means p1.p1=0, p2.p2=0  p1.p2=p1p2  </summary>    
 ```
+FCClearScalarProducts[];
+ScalarProduct[p1, p1] = 0;
+ScalarProduct[p2, p2] = 0;
+ScalarProduct[p1, p2] = p1p2;
 $LimitTo4 = False;  
 wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
    PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
@@ -21,7 +25,11 @@ worng = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & //
    ```
    
    ```
-   $LimitTo4 = False;
+FCClearScalarProducts[];
+ScalarProduct[p1, p1] = 0;
+ScalarProduct[p2, p2] = 0;
+ScalarProduct[p1, p2] = p1p2;
+$LimitTo4 = False;
 wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
    PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
    PropagatorDenominator[
@@ -34,7 +42,11 @@ worng = wt // TID[#, k] & // ToPaVe[#, k] & // PaVeReduce //
    ```
    
    ```
-   $LimitTo4 = True;
+FCClearScalarProducts[];
+ScalarProduct[p1, p1] = 0;
+ScalarProduct[p2, p2] = 0;
+ScalarProduct[p1, p2] = p1p2;
+$LimitTo4 = True;
 wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
    PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
    PropagatorDenominator[
@@ -46,7 +58,11 @@ right = wt // OneLoopSimplify[#, k] & // OneLoop[k, #] & //
    ```
    
    ```
-   $LimitTo4 = True;
+FCClearScalarProducts[];
+ScalarProduct[p1, p1] = 0;
+ScalarProduct[p2, p2] = 0;
+ScalarProduct[p1, p2] = p1p2;
+$LimitTo4 = True;
 wt = FeynAmpDenominator[PropagatorDenominator[Momentum[k, D]], 
    PropagatorDenominator[Momentum[k, D] + Momentum[p1, D]], 
    PropagatorDenominator[
