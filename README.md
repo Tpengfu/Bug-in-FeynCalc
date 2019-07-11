@@ -5,7 +5,7 @@ Then I set $LimitTo4=True, the result of OneLoop with OneLoopSimplify was True(a
 
 I  take apart the amplitude into pieces, and I found the one  which cause the problem, that is   
 
-FeynAmpDenominator[PropagatorDenominator[Momentum[k,D]],PropagatorDenominator[Momentum[k,D]+Momentum[p1,D]],PropagatorDenominator[Momentum[k,D]+Momentum[p1,D]+Momentum[p2,D]]] Pair[LorentzIndex[mu,D],Momentum[k,D]] Pair[LorentzIndex[nu,D],Momentum[k,D]]   
+'''FeynAmpDenominator[PropagatorDenominator[Momentum[k,D]],PropagatorDenominator[Momentum[k,D]+Momentum[p1,D]],PropagatorDenominator[Momentum[k,D]+Momentum[p1,D]+Momentum[p2,D]]] Pair[LorentzIndex[mu,D],Momentum[k,D]] Pair[LorentzIndex[nu,D],Momentum[k,D]]'''
   
 in which "k" is loop monentum, and we set all mass to zero, that means p1.p1=0, p2.p2=0.
 
