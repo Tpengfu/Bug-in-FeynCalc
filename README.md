@@ -1,4 +1,5 @@
-# Bug-in-FeynCalc  
+# Bug-in-FeynCalc  （Fixed）
+https://github.com/FeynCalc/feyncalc/issues/47
 
 *  <summary>Mathematica 11.3</summary>    
 ```11.3.0 for Microsoft Windows (64-bit) (March 7, 2018)```
